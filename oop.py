@@ -1,4 +1,18 @@
-print('hello')
+from abc import ABC, abstractmethod
+
+class Car(ABC):
+    @abstractmethod
+    def test(self):
+        pass
+
+class TestCar(Car):
+    def car(self):
+        return "car"
+
+    def test(self): # type: ignore
+        return 'test'
 
 
-# Создать два секретных атрибута и два секретных метода. сделать два метода которые помогут получить один атрибут и один метод. все сделать в ветке oop не трогать ветку main
+car = TestCar()
+print(car.car())
+print(car.test())
